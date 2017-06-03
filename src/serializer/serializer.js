@@ -1709,7 +1709,7 @@ export class Serializer {
     residualHeapVisitor.visitRoots();
     if (this.logger.hasErrors()) return undefined;
     this.ignoredProperties = residualHeapVisitor.ignoredProperties;
-    this.residualValues = residualHeapVisitor.values;
+    this.residualValues = new Set(residualHeapVisitor.values.keys());
     this.residualFunctionBindings = residualHeapVisitor.functionBindings;
     this.residualFunctionInfos = residualHeapVisitor.functionInfos;
 
