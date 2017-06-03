@@ -381,6 +381,7 @@ export class ResidualHeapVisitor {
 
     let visitedBindings = Object.create(null);
     this.withScope(val, () => {
+      invariant(functionInfo);
       for (let innerName in functionInfo.names) {
         let visitedBinding;
         let doesNotMatter = true;
